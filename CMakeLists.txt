@@ -4,8 +4,10 @@ project(cc-main LANGUAGES C)
 
 add_subdirectory(vendor/cargs)
 
-add_executable(cc-main
-    src/main.c
+file(GLOB SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c"
 )
+
+add_executable(cc-main ${SOURCES})
 
 target_link_libraries(cc-main PRIVATE cargs)
