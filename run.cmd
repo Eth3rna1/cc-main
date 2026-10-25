@@ -1,7 +1,7 @@
 @echo off
 
 if not exist "build" (
-    cmake -S . -B build -G "MinGW MakeFiles"
+    cmake -S . -B build -G "MinGW Makefiles"
     if errorlevel 1 exit /b 1
 )
 
